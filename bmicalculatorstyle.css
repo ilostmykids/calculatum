@@ -1,0 +1,844 @@
+html, body{
+    padding: 0;
+    margin: 0; 
+    width: 100%; 
+
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    background-color: #171c22;
+    color: white;
+    width: 100%;
+    padding: 1%;
+    height: 5%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+
+}
+
+.buttons{
+    
+    display: flex;
+    justify-content: space-between;
+    width: 55%;
+    height: 100%;
+    margin: 0;
+    align-items: center;
+    
+}
+
+.menubuttons{
+    width: 50%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.loginbuttons{
+    width: 50%;
+    height: 100%;
+    align-items: center;
+}
+
+.menubutton{
+    display:  flex;
+    justify-content: space-around;
+    height: 100%;
+    align-items: center;
+}
+
+.loginbutton{
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    align-items: center;
+}
+
+
+.menubutton a{
+    text-decoration: none;
+    color: white;
+    font-size: calc(10px + 7 * (100vw / 1280));
+    font-family: 'Inter';
+    width: 100%;
+    position: relative;
+    justify-content: center;
+}
+
+.loginbutton a{
+    text-decoration: none;
+    color: white;
+    font-size: calc(10px + 7 * (100vw / 1280));
+    font-family: 'Inter';
+}
+
+.menubutton a{
+    align-items: center;
+    display: flex;
+    
+}
+
+.menubutton a::before{
+    content: '';
+    position: absolute;
+    background-color: #f61aa1;
+    width: 90%;
+    height: 15%;
+    top: 200%;
+    left: 7%;
+    transform: scale(0);
+    transition: all 0.3s ease;
+}
+
+.menubutton a:hover::before{
+    transform: scale(1);
+}
+
+
+.loginbutton a{
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+}
+
+.loginbutton a:first-child{
+    background-color: #2e3a48;
+    height: 100%;
+    width: 40%;
+    border-radius: calc(5px + 10 * (100vw / 1280));
+}
+
+.loginbutton a:first-child:hover{
+    background-color: #232c37;
+    color: #dcdcdc;
+}
+
+.loginbutton a:nth-child(2):hover{
+    background-color: #ab1370;
+    color: #dcdcdc;
+}
+
+.loginbutton a:nth-child(2){
+    /* background-color: #f61aa1; */
+    height: 100%;
+    width: 40%;
+    border-radius: calc(5px + 10 * (100vw / 1280));
+    
+}
+.title{
+    font-size: calc(15px + 13 * (100vw / 1280));
+    align-self:center;
+    font-family: 'Inter';
+    font-weight: bolder;
+    width: 45%;
+    z-index: 5;
+}
+
+.burger{
+
+    width: 5%;
+    z-index:   7;
+}
+
+.burger::after,
+.burger::before{
+    content: '';
+    background-color: white;
+    width: 40px;
+    height: 7%;
+    position: absolute;
+    transition: all 0.3s ease;
+ 
+}
+.burger::after{
+    right: 5%;
+    top: 30%;
+  
+}
+.burger.active::after{
+    transform: rotate(45deg);
+    top: 50%;
+}
+.burger::before{
+    right: 5%;
+    top: 70%;
+    
+}
+.burger.active::before{
+    transform: rotate(-45deg);
+    top: 50%;
+}
+.burger span{
+    background-color: white;
+    width: 40px;
+    height: 7%;
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transition: all 0.3s ease;
+}
+.burger.active span{
+    transform: scale(0);
+}
+
+.menudrop{
+
+    display: flex;
+    flex-direction: column;
+    background-color: #232c37;
+    width: 100%;
+    height: 80%;
+    position: fixed;
+    top: -200%;
+    left: 0;
+    justify-content: start;
+    /* padding-top: 30%; */
+    transition: all 0.3s ease;
+    border-bottom-left-radius: calc(5px + 10 * (100vw / 1280));
+    border-bottom-right-radius: calc(5px + 10 * (100vw / 1280));
+    
+}
+
+.firstdrops{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20%;
+    font-weight: bold;
+
+}
+.seconddrops{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2%;
+    margin-top: 5%;
+}
+
+.firstdrops a{
+    color: white;
+    text-decoration: none;
+    font-size: calc(20px + 40 * (100vw / 1280));
+    font-family: 'Inter';
+}
+
+.seconddrops a{
+    color: white;
+    text-decoration: none;
+    font-size: calc(20px + 40 * (100vw / 1280));
+    font-family: 'Inter';
+    margin-top: 5%;
+}
+
+.seconddrops a:first-child{
+    background-color: #2e3a48;
+    height: 100%;
+    width: 60%;
+    border-radius: calc(5px + 10 * (100vw / 1280));
+    text-align: center;
+
+}
+.seconddrops a:nth-child(2){
+    background-color: #f61aa1;
+    height: 100%;
+    width: 60%;
+    border-radius: calc(5px + 10 * (100vw / 1280));
+    text-align: center;
+
+    
+}
+
+.menudrop.active{
+
+    top: 0;
+}
+.drops{
+    height: 80%;
+    text-decoration: none;
+    list-style-type: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 80px;    
+}
+
+.signup{
+    background-color: #f61aa1;
+}
+.inv{
+    background-color: #232c37;
+    display: none;
+}
+
+.actived{
+    background: linear-gradient(21deg, #dd03e4, #5611ec);
+    transition: all 0.3s;
+}
+
+.mainarea{
+    position: relative;
+    background: linear-gradient(21deg, #dd03e4, #5611ec);
+    height: 80vh;
+    margin: 0;
+    display: flex;
+    padding-top: 5%;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.logoarea{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-self: center;
+    justify-content: center;
+    padding-left: 5%;
+    padding-bottom: 7%;
+}
+
+.logoarea span{
+    color: #212a35;
+    font-family: 'Inter';
+    font-weight: bolder;
+    font-size: calc(30px + 50 * (100vw / 1280));
+}
+
+.logoarea h1{
+    color: #212a35;
+    font-family: 'Inter';
+    font-weight: 400;
+    padding-left: 3%;
+    margin: 0;
+}
+
+.logo{
+    width:18%;
+    height: 18%;
+    object-fit: contain;
+}
+
+.calcimg{
+    display:flex;
+    width: 55%;
+}
+
+.calc1{
+    width: 50%;
+    object-fit: scale-down;
+    padding-top: 10%;
+    margin-right: -5%;
+    margin-left: 7%;
+
+}
+.calc2{
+    width: 50%;
+    object-fit: scale-down;
+    /* padding-bottom: 10%; */
+    margin-top: -5%
+
+}
+
+
+.hidden{
+    display: none;
+    color: white;
+    font-size: calc(30px + 20 * (100vw / 1280));
+    font-family: 'Inter';
+    font-weight: bold;
+}
+
+.footer{
+    background-color: #171c22;
+    display: flex;
+    height: 40vh;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10%;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-bottom: 2%;
+
+}
+
+.content{
+    display: flex;
+    font-family: 'Inter';
+    justify-content: space-between;
+    width: 100%;
+    height: 40%;
+    
+
+}
+
+.firstblock{
+    display: flex;
+    justify-content: start;
+}
+.firstblock img{
+    width: 20%;
+    object-fit: scale-down;
+    margin-right: 10%; 
+
+}
+
+.firstinblock{
+    display: flex;
+    flex-direction: column;
+    color: #818181;
+    font-size: calc(13px + 7 * (100vw / 1280));
+    font-weight: bold;
+    justify-content: space-between;
+    
+}
+.firstinblock span{
+    color: white;
+    font-weight: bold;
+    font-size: calc(17px + 11 * (100vw / 1280));
+}
+.secondblock{
+    display: flex;
+    color: #818181;
+    flex-direction: column;
+    font-size: calc(13px + 7 * (100vw / 1280));
+    font-weight: bold;
+    justify-content: space-between;
+
+}
+
+.secondblock span{
+    color: white;
+    font-weight: bold;
+    font-size: calc(17px + 11 * (100vw / 1280));
+}
+
+.logos{
+    display: flex;
+    justify-content: space-between;
+}
+
+.logos img{
+    width: 40%;
+    object-fit: scale-down;
+}
+
+.reserved{
+    font-family: 'Inter';
+    color: #818181;
+    font-size: calc(7px + 11 * (100vw / 1280));
+}
+
+.calcarea{
+    display: flex;
+    background-color: #171c22;
+    width: 100%;
+    height: 110vh;
+    justify-content: space-evenly;
+    padding-top: 3%;
+}
+
+:focus-visible {
+    outline:#171c22 auto 1px;
+}
+.calcdescription{
+    display: flex;
+    flex-direction: column;
+    width: 23%;
+
+}
+
+.calcdescription h1{
+    font-size: calc(7px + 11 * (100vw / 1280));
+    font-family: 'Inter';
+    color: white;
+}
+.calcdescription span{
+    font-size: calc(10px + 13 * (100vw / 1280));
+    font-family: 'Inter';
+    color: white;
+    font-weight: bold;
+}
+
+.calclinks{
+    display: flex;
+    flex-direction: column;
+    padding: 6% 0%;
+    justify-content: space-between;
+}
+
+.firstlinks{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 5%;
+    width: 100%;
+}
+
+.firstlinks a{
+    text-decoration: none;
+    color: white;
+    font-family: 'Inter';
+    font-size: calc(7px + 10 * (100vw / 1280));
+    font-weight: bold;
+    background-color: #2e3a48;
+    padding: 2% 7%;
+    border-radius: calc(5px + 10 * (100vw / 1280));
+}
+.secondlinks{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+}
+.secondlinks a{
+    text-decoration: none;
+    color: white;
+    font-family: 'Inter';
+    font-size: calc(7px + 10 * (100vw / 1280));
+    font-weight: bold;
+    background-color: #2e3a48;
+    padding: 2% 7%;
+    border-radius: calc(5px + 10 * (100vw / 1280));
+}
+
+.description{
+    background-color: #2e3a48;
+    border-radius: calc(5px + 10 * (100vw / 1280));
+    padding: 5%;
+}
+
+.calculatorblock{
+    width: 40%;
+    padding: 3%;
+
+
+}
+
+
+/* Basic reset */
+.calculator {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+	
+	/* Better text styling */
+    font-family: 'Inter';
+
+}
+
+/* Finally adding some IE9 fallbacks for gradients to finish things up */
+
+/* A nice BG gradient */
+/* html {
+	height: 100%;
+	background: white;
+	background: radial-gradient(circle, #fff 20%, #ccc);
+	background-size: cover;
+} */
+
+/* Using box shadows to create 3D effects */
+#calculator {
+	width: 100%;
+	height: 30%;
+	
+	display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+	padding: 3% 0;
+	
+	background: #212a35;
+	
+	border-radius: calc(5px + 10 * (100vw / 1280));
+}
+
+label{
+    font-family: 'Inter';
+    font-size: calc(13px + 10 * (100vw / 1280));
+    color: white;
+}
+button{
+    font-family: 'Inter';
+}
+
+.form_radio_btn {
+	display: flex;
+	/* margin-right: 2%; */
+    /* padding: 0 20%; */
+    width: 30%;
+    justify-content: center;
+    
+}
+.form_radio_btn input[type=radio] {
+	display: none;
+}
+.form_radio_btn label {
+	display: inline-block;
+	cursor: pointer;
+	padding: 0px 15px;
+	line-height: 34px;
+	border: medium solid #0d0f12;
+	border-radius: calc(5px + 10 * (100vw / 1280));
+	user-select: none;
+}
+ 
+/* Checked */
+.form_radio_btn input[type=radio]:checked + label {
+	background: #6344d4;
+}
+ 
+/* Hover */
+.form_radio_btn label:hover {
+	color: white
+}
+
+.custom-btn {
+    width: 130px;
+    height: 40px;
+    color: #fff;
+    border-radius: calc(5px + 10 * (100vw / 1280));
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+     /* box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+     7px 7px 20px 0px rgba(0,0,0,.1),
+     4px 4px 5px 0px rgba(0,0,0,.1); */
+    outline: none;
+  }
+  .btn-15 {
+    background: linear-gradient(21deg, #dd03e4, #5611ec);
+    border: none;
+    z-index: 1;
+  }
+  .btn-15:after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    background-color: #663dff;
+    /* border-radius: 5px;
+     box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+     7px 7px 20px 0px rgba(0,0,0,.1),
+     4px 4px 5px 0px rgba(0,0,0,.1); */
+    border-radius: calc(5px + 10 * (100vw / 1280));
+    transition: all 0.3s ease;
+  }
+  .btn-15:hover {
+    color: #fff;
+  }
+  .btn-15:hover:after {
+    left: 0;
+    width: 100%;
+  }
+  .btn-15:active {
+    top: 2px;
+  }
+
+.params{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 15%;
+
+}
+
+.params div{
+    height: 100%;
+    width: 30%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    
+}
+.params div label{
+    vertical-align: top;
+    padding-bottom: 5%;
+    font-size: calc(13px + 10 * (100vw / 1280));
+    color: white;
+    
+}
+
+input{
+    background-color:#212a35;
+    color: white;
+}
+
+
+.params div input{
+    width: 40%;
+    height: 40%;
+    font-family: 'Inter';
+    font-size: calc(13px + 10 * (100vw / 1280));
+    padding: 6%;
+    
+    border: medium solid #171c22;
+    
+    
+}
+
+
+.calcbuttons{
+    display: flex;
+    justify-content: center;
+}
+
+.calcbuttons button{
+    width: 60%;
+}
+
+.btn-15{
+    font-size: calc(13px + 10 * (100vw / 1280));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.params div input{
+    border-radius: calc(5px + 10 * (100vw / 1280));
+}
+.choosen{
+    background: linear-gradient(21deg, #dd03e4, #5611ec);
+}
+
+.firstlinks a:hover{
+    background-color: #212a35;
+    /* border: medium solid #0d0f12; */
+}
+
+.secondlinks a:hover{
+    background-color: #212a35;
+    /* border: medium solid #0d0f12; */
+}
+
+.answer{
+    width: 100%;
+    display: flex;
+    background-color: #212a35;
+    flex-direction: column-reverse;
+    margin-top: 5%;
+    padding: 5% 0;
+    border-radius: calc(5px + 10 * (100vw / 1280));
+    height: 10%;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+
+.answer input{
+    width: 40%;
+    height: 40%;
+    font-family: 'Inter';
+    font-size: calc(13px + 10 * (100vw / 1280));
+    border-radius: calc(5px + 10 * (100vw / 1280));
+    padding: 1%;
+}
+
+.bottomdescription{
+    background-color: #171c22;
+    width: 100%;
+    height: 60vh;
+    display: flex;
+}
+
+.bottomtext{
+    background-color: #2e3a48;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2%;
+    padding: 2%;
+    border-radius: calc(5px + 10 * (100vw / 1280));
+}
+
+.bottomtext h1{
+    color: white;
+    font-family: 'Inter';
+    font-size: calc(13px + 8 * (100vw / 1280));
+}
+
+
+@media screen and (max-width:900px){
+    .mainarea{
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .calcimg{
+        justify-content: center;
+        height: 80%;
+        width: 20%;
+        
+    }
+    .calc1{
+        height: 100%;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        margin-top: 20%;
+
+    }
+    .calc2{
+        display: none;
+        object-fit: none;
+    }
+    .buttons{
+        display: none;
+    }
+    .logoarea{
+        align-items: center;
+    }
+    .logo{
+        width: 40%;
+    }
+    .calcarea{
+        flex-direction: column;
+        align-items: center;
+    }
+    .calcdescription{
+        width: 80%;
+    }
+    .description{
+        display: none;
+    }
+    .calculatorblock{
+        width: 80%;
+        justify-content: center;
+        height: 75%;
+        align-items: center;
+    }
+
+    .bottomtext h1{
+
+        font-size: calc(10px + 7 * (100vw / 1280));
+        flex-wrap: wrap;
+        
+    }
+    
+    }
+
+
+@media screen and (min-width: 900px){
+    .burger{
+        display: none;
+    }
+
+}
+
+
+
+
+
+

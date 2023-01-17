@@ -1,0 +1,697 @@
+html, body{
+    padding: 0;
+    margin: 0; 
+    width: 100%; 
+
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    background-color: #171c22;
+    color: white;
+    width: 100%;
+    padding: 1%;
+    height: 5%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+
+}
+
+.buttons{
+    
+    display: flex;
+    justify-content: space-between;
+    width: 55%;
+    height: 100%;
+    margin: 0;
+    align-items: center;
+    
+}
+
+.menubuttons{
+    width: 50%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.loginbuttons{
+    width: 50%;
+    height: 100%;
+    align-items: center;
+}
+
+.menubutton{
+    display:  flex;
+    justify-content: space-around;
+    height: 100%;
+    align-items: center;
+}
+
+.loginbutton{
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    align-items: center;
+}
+
+
+.menubutton a{
+    text-decoration: none;
+    color: white;
+    font-size: calc(10px + 7 * (100vw / 1280));
+    font-family: 'Inter';
+    width: 100%;
+    position: relative;
+    justify-content: center;
+}
+
+.loginbutton a{
+    text-decoration: none;
+    color: white;
+    font-size: calc(10px + 7 * (100vw / 1280));
+    font-family: 'Inter';
+}
+
+.menubutton a{
+    align-items: center;
+    display: flex;
+    
+}
+
+.menubutton a::before{
+    content: '';
+    position: absolute;
+    background-color: #f61aa1;
+    width: 90%;
+    height: 15%;
+    top: 200%;
+    left: 7%;
+    transform: scale(0);
+    transition: all 0.3s ease;
+}
+
+.menubutton a:hover::before{
+    transform: scale(1);
+}
+
+
+.loginbutton a{
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+}
+
+.loginbutton a:first-child{
+    background-color: #2e3a48;
+    height: 100%;
+    width: 40%;
+    border-radius: calc(5px + 10 * (100vw / 1280));
+}
+
+.loginbutton a:first-child:hover{
+    background-color: #232c37;
+    color: #dcdcdc;
+}
+
+.loginbutton a:nth-child(2):hover{
+    background-color: #ab1370;
+    color: #dcdcdc;
+}
+
+.loginbutton a:nth-child(2){
+    /* background-color: #f61aa1; */
+    height: 100%;
+    width: 40%;
+    border-radius: calc(5px + 10 * (100vw / 1280));
+    
+}
+.title{
+    font-size: calc(15px + 13 * (100vw / 1280));
+    align-self:center;
+    font-family: 'Inter';
+    font-weight: bolder;
+    width: 45%;
+    z-index: 5;
+}
+
+.burger{
+
+    width: 5%;
+    z-index:   7;
+}
+
+.burger::after,
+.burger::before{
+    content: '';
+    background-color: white;
+    width: 40px;
+    height: 7%;
+    position: absolute;
+    transition: all 0.3s ease;
+ 
+}
+.burger::after{
+    right: 5%;
+    top: 30%;
+  
+}
+.burger.active::after{
+    transform: rotate(45deg);
+    top: 50%;
+}
+.burger::before{
+    right: 5%;
+    top: 70%;
+    
+}
+.burger.active::before{
+    transform: rotate(-45deg);
+    top: 50%;
+}
+.burger span{
+    background-color: white;
+    width: 40px;
+    height: 7%;
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transition: all 0.3s ease;
+}
+.burger.active span{
+    transform: scale(0);
+}
+
+.menudrop{
+
+    display: flex;
+    flex-direction: column;
+    background-color: #232c37;
+    width: 100%;
+    height: 80%;
+    position: fixed;
+    top: -200%;
+    left: 0;
+    justify-content: start;
+    /* padding-top: 30%; */
+    transition: all 0.3s ease;
+    border-bottom-left-radius: calc(5px + 10 * (100vw / 1280));
+    border-bottom-right-radius: calc(5px + 10 * (100vw / 1280));
+    
+}
+
+.firstdrops{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20%;
+    font-weight: bold;
+
+}
+.seconddrops{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2%;
+    margin-top: 5%;
+}
+
+.firstdrops a{
+    color: white;
+    text-decoration: none;
+    font-size: calc(20px + 40 * (100vw / 1280));
+    font-family: 'Inter';
+}
+
+.seconddrops a{
+    color: white;
+    text-decoration: none;
+    font-size: calc(20px + 40 * (100vw / 1280));
+    font-family: 'Inter';
+    margin-top: 5%;
+}
+
+.seconddrops a:first-child{
+    background-color: #2e3a48;
+    height: 100%;
+    width: 60%;
+    border-radius: calc(5px + 10 * (100vw / 1280));
+    text-align: center;
+
+}
+.seconddrops a:nth-child(2){
+    background-color: #f61aa1;
+    height: 100%;
+    width: 60%;
+    border-radius: calc(5px + 10 * (100vw / 1280));
+    text-align: center;
+
+    
+}
+
+.menudrop.active{
+
+    top: 0;
+}
+.drops{
+    height: 80%;
+    text-decoration: none;
+    list-style-type: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 80px;    
+}
+
+.signup{
+    background-color: #f61aa1;
+}
+.inv{
+    background-color: #232c37;
+    display: none;
+}
+
+.actived{
+    background: linear-gradient(21deg, #dd03e4, #5611ec);
+    transition: all 0.3s;
+}
+
+.mainback{
+    display: flex;
+    width: 100%;
+    background-color: #0a0c0e;
+}
+
+.mainarea{
+    position: relative;
+    background: linear-gradient(21deg, #dd03e4, #5611ec);
+    height: 80vh;
+    margin: 0;
+    display: flex;
+    padding-top: 5%;
+    width: 100%;
+    justify-content: space-between;
+    border-bottom-left-radius: calc(5px + 13 * (100vw / 1280));
+    border-bottom-right-radius: calc(5px + 13 * (100vw / 1280));
+}
+
+.logoarea{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-self: center;
+    justify-content: center;
+    padding-left: 5%;
+    padding-bottom: 7%;
+}
+
+.logoarea span{
+    color: #212a35;
+    font-family: 'Inter';
+    font-weight: bolder;
+    font-size: calc(30px + 50 * (100vw / 1280));
+}
+
+.logoarea h1{
+    color: #212a35;
+    font-family: 'Inter';
+    font-weight: 400;
+    padding-left: 3%;
+    margin: 0;
+}
+
+.logo{
+    width:18%;
+    height: 18%;
+    object-fit: contain;
+}
+
+.calcimg{
+    display:flex;
+    width: 55%;
+}
+
+.calc1{
+    width: 50%;
+    object-fit: scale-down;
+    padding-top: 10%;
+    margin-right: -5%;
+    margin-left: 7%;
+
+}
+.calc2{
+    width: 50%;
+    object-fit: scale-down;
+    /* padding-bottom: 10%; */
+    margin-top: -5%
+
+}
+
+.aboutarea{
+    display: flex;
+    width: 90%;
+    /* height: 300vh; */
+    background: linear-gradient(180deg,#0a0c0e 0%, #171c22 5%);
+    flex-direction: column;
+    /* align-items: center; */
+    padding: 5%;
+    
+}
+
+.calculatum{
+    font-size: calc(30px + 30 * (100vw / 1280));
+    font-family: 'Inter';
+    font-weight: bold;
+    color: white;
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
+.aboutarea h1{
+    font-size: calc(13px + 7 * (100vw / 1280));
+}
+
+.aboutus{
+    display: flex;
+    flex-direction: column;
+    
+}
+.aboutus span{
+    font-size: calc(20px + 20 * (100vw / 1280));
+    font-family: 'Inter';
+    font-weight: bold;
+    color: white;
+    margin-bottom: 2%;
+}
+
+.aboutblock{
+    display: flex;
+    /* justify-content: ; */
+    margin-bottom: 5%;
+}
+
+.aboutblock img{
+    
+    object-fit: scale-down;
+    width: 6%;
+    justify-self: start;
+    align-self: start;
+    margin-right: 5%;
+    margin-top: 1%;
+    
+}
+
+.textblock{
+    width: 70%;
+    color: white;
+    font-size: calc(20px + 10 * (100vw / 1280));
+    
+}
+
+.contactus{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-size: calc(20px + 10 * (100vw / 1280));
+    width: 90%;
+    margin-bottom: 5%;
+}
+.contactus span{
+    font-size: calc(20px + 20 * (100vw / 1280));
+    font-weight: bold;
+    margin-bottom: 2%;
+}
+
+.description{
+    display: flex;
+    flex-direction: column;
+
+    height: 80%;
+}
+.description span{
+    font-size: calc(10px + 10 * (100vw / 1280));
+    font-weight: bold;
+    margin-bottom: 2%;
+    color: white;
+    border-radius: calc(4px + 2 * (100vw / 1280));
+}
+
+.description .descspan{
+    font-size: calc(20px + 20 * (100vw / 1280));
+}
+
+
+.descblock{
+    display: flex;
+
+}
+
+.descriptionplates{
+    display: flex;
+    flex-direction: column;
+    margin-right: 5%;
+    
+}
+.descriptionplates span{
+    background-color: #2e3a48;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    width: calc(30px + 30 * (100vw / 1280));
+    height: calc(30px + 30 * (100vw / 1280));
+    margin-bottom: 15%;
+}
+
+.descriptionplates .violet{
+    background-color: #6344d4;
+}
+
+.descriptionplates .grad{
+    background: linear-gradient(21deg,#5611ec 0%, #dd03e4 40%);
+}
+
+.descriptiontext{
+    color: white;
+    width: 80%;
+    height: 50%;
+    font-size: calc(20px + 10 * (100vw / 1280));
+}
+
+.footer{
+    background-color: #171c22;
+    display: flex;
+    height: 40vh;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10%;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-bottom: 2%;
+}
+
+.content{
+    display: flex;
+    font-family: 'Inter';
+    justify-content: space-between;
+    width: 100%;
+    height: 40%;
+    
+
+}
+
+.firstblock{
+    display: flex;
+    justify-content: start;
+}
+.firstblock img{
+    width: 20%;
+    object-fit: scale-down;
+    margin-right: 10%; 
+
+}
+
+.firstinblock{
+    display: flex;
+    flex-direction: column;
+    color: #818181;
+    font-size: calc(13px + 7 * (100vw / 1280));
+    font-weight: bold;
+    justify-content: space-between;
+    
+}
+.firstinblock span{
+    color: white;
+    font-weight: bold;
+    font-size: calc(17px + 11 * (100vw / 1280));
+}
+.secondblock{
+    display: flex;
+    color: #818181;
+    flex-direction: column;
+    font-size: calc(13px + 7 * (100vw / 1280));
+    font-weight: bold;
+    justify-content: space-between;
+
+}
+
+.secondblock span{
+    color: white;
+    font-weight: bold;
+    font-size: calc(17px + 11 * (100vw / 1280));
+}
+
+.logos{
+    display: flex;
+    justify-content: space-between;
+}
+
+.logos img{
+    width: 40%;
+    object-fit: scale-down;
+}
+
+.reserved{
+    font-family: 'Inter';
+    color: #818181;
+    font-size: calc(7px + 11 * (100vw / 1280));
+}
+
+
+@media screen and (max-width:900px){
+    .mainarea{
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .calcimg{
+        justify-content: center;
+        height: 80%;
+        width: 20%;
+        
+    }
+    .calc1{
+        height: 100%;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        margin-top: 20%;
+
+    }
+    .calc2{
+        display: none;
+        object-fit: none;
+    }
+    .buttons{
+        display: none;
+    }
+    .logoarea{
+        align-items: center;
+    }
+    .logo{
+        width: 40%;
+    }
+    /* .aboutarea{
+        height: 400vh;
+    } */
+    
+
+}
+
+@media screen and (min-width: 900px){
+    .burger{
+        display: none;
+    }
+
+}
+
+/* чтобы полоска прокрутки всегда была, а то без неё контент смещается */
+html {
+    overflow-y: scroll;
+    font-family: 'Inter';
+}
+
+
+
+
+
+/* для логина */
+.log-in-main {
+    position: relative;
+    background: linear-gradient(21deg, #dd03e4, #5611ec);
+    margin: 0;
+    display: flex;
+    padding-top: 5%;
+    width: 100%;
+    justify-content: center;
+    align-content:space-around;
+
+}
+
+.sign-in-container {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    background-color: white;
+	border-radius: 28px;
+    width: 542px;
+	height: 806px;
+    text-align: center;
+    margin: 90px;
+}
+
+.sign-in-container h1 {
+    padding: 84px 0;
+    margin: 0;
+    color: #212a35;
+    font-size: 40px;
+}
+
+.sign-in-form {
+    display: flex;
+    flex-direction: column;
+    color: #636e7c;
+}
+
+.input {
+    font-size: 23px;
+    width: 414px;
+    display: flex;      
+    flex-direction: column;
+    align-self: center;
+    text-align: left;  
+    margin: 10px;
+}
+
+.input input {
+    font-family: 'Inter';
+    font-size: 23px;
+}
+
+.log-in {
+    font-family: 'Inter';
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    background-color: #6344d4;
+    border: 0;
+    border-radius: 1000px;
+    width: 382px;
+    height: 87px;
+    margin: 45px;
+}
+
+.log-in:hover {
+    background: #7054d8;
+}
+    
+.log-in:focus {
+    outline: none;
+    background-color: #4025a2;
+}
+
+.to-sign-up {
+    font-size: 23px;
+    padding-bottom: 50px;
+}

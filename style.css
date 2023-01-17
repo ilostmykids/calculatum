@@ -1,0 +1,908 @@
+html, body{
+    padding: 0;
+    margin: 0; 
+    width: 100%; 
+
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    /* background-color: #171c22; */
+    color: white;
+    width: 100%;
+    padding: 1%;
+    height: 5%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    background: #171c22;
+    
+
+}
+
+/* .header .active{
+    
+    background: linear-gradient(21deg, #dd03e4, #5611ec);
+    transition: all 0.3s;
+} */
+
+
+
+.buttons{
+    
+    display: flex;
+    justify-content: space-between;
+    width: 55%;
+    height: 100%;
+    margin: 0;
+    align-items: center;
+    
+}
+
+.menubuttons{
+    width: 50%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.loginbuttons{
+    width: 50%;
+    height: 100%;
+    align-items: center;
+}
+
+.menubutton{
+    display:  flex;
+    justify-content: space-around;
+    height: 100%;
+    align-items: center;
+}
+
+.loginbutton{
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    align-items: center;
+}
+
+
+.menubutton a{
+    text-decoration: none;
+    color: white;
+    font-size: calc(10px + 7 * (100vw / 1280));
+    font-family: 'Inter';
+    width: 100%;
+    position: relative;
+    justify-content: center;
+}
+
+.loginbutton a{
+    text-decoration: none;
+    color: white;
+    font-size: calc(10px + 7 * (100vw / 1280));
+    font-family: 'Inter';
+}
+
+.menubutton a{
+    align-items: center;
+    display: flex;
+    
+}
+
+.menubutton a::before{
+    content: '';
+    position: absolute;
+    background-color: #f61aa1;
+    width: 90%;
+    height: 15%;
+    top: 200%;
+    left: 7%;
+    transform: scale(0);
+    transition: all 0.3s ease;
+}
+
+.menubutton a:hover::before{
+    transform: scale(1);
+}
+
+
+.loginbutton a{
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+}
+
+.loginbutton a:first-child{
+    background-color: #2e3a48;
+    height: 100%;
+    width: 40%;
+    border-radius: calc(5px + 10 * (100vw / 1280));
+}
+
+.loginbutton a:first-child:hover{
+    background-color: #232c37;
+    color: #dcdcdc;
+}
+
+.loginbutton a:nth-child(2):hover{
+    background-color: #ab1370;
+    color: #dcdcdc;
+}
+
+.loginbutton a:nth-child(2){
+    /* background-color: #f61aa1; */
+    height: 100%;
+    width: 40%;
+    border-radius: calc(5px + 10 * (100vw / 1280));
+    
+}
+.title{
+    font-size: calc(15px + 13 * (100vw / 1280));
+    align-self:center;
+    font-family: 'Inter';
+    font-weight: bolder;
+    width: 45%;
+    z-index: 5;
+}
+
+
+.burger{
+
+    width: 5%;
+    z-index:   7;
+}
+
+.burger::after,
+.burger::before{
+    content: '';
+    background-color: white;
+    width: 40px;
+    height: 7%;
+    position: absolute;
+    transition: all 0.3s ease;
+ 
+}
+.burger::after{
+    right: 5%;
+    top: 30%;
+  
+}
+.burger.active::after{
+    transform: rotate(45deg);
+    top: 50%;
+}
+.burger::before{
+    right: 5%;
+    top: 70%;
+    
+}
+.burger.active{
+    background-color: none;
+}
+.burger.active::before{
+    transform: rotate(-45deg);
+    top: 50%;
+}
+.burger span{
+    background-color: white;
+    width: 40px;
+    height: 7%;
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transition: all 0.3s ease;
+}
+.burger.active span{
+    transform: scale(0);
+}
+
+.menudrop{
+
+    display: flex;
+    flex-direction: column;
+    background-color: #232c37;
+    width: 100%;
+    height: 80%;
+    position: fixed;
+    top: -200%;
+    left: 0;
+    justify-content: start;
+    /* padding-top: 30%; */
+    transition: all 0.3s ease;
+    border-bottom-left-radius: calc(5px + 10 * (100vw / 1280));
+    border-bottom-right-radius: calc(5px + 10 * (100vw / 1280));
+   
+}
+
+.firstdrops{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20%;
+    font-weight: bold;
+
+}
+.seconddrops{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2%;
+    margin-top: 5%;
+}
+
+.firstdrops a{
+    color: white;
+    text-decoration: none;
+    font-size: calc(20px + 40 * (100vw / 1280));
+    font-family: 'Inter';
+}
+
+.seconddrops a{
+    color: white;
+    text-decoration: none;
+    font-size: calc(20px + 40 * (100vw / 1280));
+    font-family: 'Inter';
+    margin-top: 5%;
+}
+
+.seconddrops a:first-child{
+    background-color: #2e3a48;
+    height: 100%;
+    width: 60%;
+    border-radius: calc(5px + 10 * (100vw / 1280));
+    text-align: center;
+
+}
+.seconddrops a:nth-child(2){
+    background-color: #f61aa1;
+    height: 100%;
+    width: 60%;
+    border-radius: calc(5px + 10 * (100vw / 1280));
+    text-align: center;
+
+    
+}
+
+.signup{
+    background-color: #f61aa1;
+}
+.inv{
+    background-color: #232c37;
+    display: none;
+}
+
+.actived{
+    background: linear-gradient(21deg, #dd03e4, #5611ec);
+    transition: all 0.3s;
+}
+
+.menudrop.active{
+
+    top: 0;
+}
+.drops{
+    height: 80%;
+    text-decoration: none;
+    list-style-type: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 80px;    
+}
+
+.mainback{
+    display: flex;
+    width: 100%;
+    background-color: #0a0c0e;
+}
+
+.mainarea{
+    position: relative;
+    background: linear-gradient(21deg, #dd03e4, #5611ec);
+    height: 80vh;
+    margin: 0;
+    display: flex;
+    padding-top: 5%;
+    width: 100%;
+    justify-content: space-between;
+    border-bottom-left-radius: calc(5px + 13 * (100vw / 1280));
+    border-bottom-right-radius: calc(5px + 13 * (100vw / 1280));
+}
+
+.logoarea{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-self: center;
+    justify-content: center;
+    padding-left: 5%;
+    padding-bottom: 7%;
+}
+
+.logoarea span{
+    color: #212a35;
+    font-family: 'Inter';
+    font-weight: bolder;
+    font-size: calc(30px + 50 * (100vw / 1280));
+}
+
+.logoarea h1{
+    color: #212a35;
+    font-family: 'Inter';
+    font-weight: 400;
+    padding-left: 3%;
+    margin: 0;
+}
+
+.logo{
+    width:18%;
+    height: 18%;
+    object-fit: contain;
+}
+
+.calcimg{
+    display:flex;
+    width: 55%;
+}
+
+.calc1{
+    width: 50%;
+    object-fit: scale-down;
+    padding-top: 10%;
+    margin-right: -5%;
+    margin-left: 7%;
+
+}
+.calc2{
+    width: 50%;
+    object-fit: scale-down;
+    /* padding-bottom: 10%; */
+    margin-top: -5%
+
+}
+
+.description{
+    background: linear-gradient(180deg,#0a0c0e 0%, #111418 5%);
+    width: 100%;
+    height: 140vh;
+    text-decoration: none;
+    color: white;
+    font-family: 'Inter';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.selectmode a{
+    text-decoration: none;
+    color: white;
+    background-color: #2e3a48;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    font-size: calc(15px + 12 * (100vw / 1280));
+    font-weight: bold;
+    border-radius: calc(5px + 13 * (100vw / 1280));
+    /* padding: 1%; */
+    padding-right: 3%;
+    padding-left: 3%;
+}
+.selectmode a:hover{
+    background-color: #111418;
+    border: medium solid #0a0c0e;
+    
+}
+.selectmode span{
+    font-size: calc(25px + 9 * (100vw / 1280));
+    font-weight: bold;
+}
+
+.selectmode{
+    display: flex;
+    height: 20%;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+
+
+.design{
+    display: flex;
+    background-color: #2e3a48;
+    width: 100%;
+    border-radius: calc(5px + 13 * (100vw / 1280));
+    height: 40%;
+    justify-content: space-around;
+    font-size: calc(30px + 20 * (100vw / 1280));
+    font-weight: bold;
+    align-items: center;
+    padding-bottom: 0;
+
+
+}
+
+.design img{
+    height: 80%;
+    object-fit: scale-down;
+    padding-right: 25%;
+    padding-bottom: 0;
+    margin-top: auto;
+    
+}
+.design span{
+    padding-left: 25%;
+}
+
+.modes{
+    display: flex;
+    height: 40%;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+
+.modes img{
+    height: 60%;
+    object-fit: scale-down;
+    
+    padding-bottom: 0;
+    margin-top: auto;
+    padding-right: 2%;
+}
+
+.modes span{
+    font-size: calc(30px + 20 * (100vw / 1280));
+    font-weight: bold;
+    white-space: nowrap;
+    padding-left: 2%;
+}
+
+.chooseback{
+    display: flex;
+    width: 100%;
+    background-color: #111418;
+}
+
+.choosestyle{
+    background-color: #2e3a48;
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: calc(5px + 13 * (100vw / 1280));
+    
+}
+
+.choosestyle span{
+    color: white;
+    font-size: calc(30px + 20 * (100vw / 1280));
+    font-family: 'Inter';
+    font-weight: bold;
+    margin: auto;
+    
+
+}
+
+
+.calcimg{
+    height: 100%;
+    object-fit: scale-down;
+
+}
+
+
+.hidden{
+    display: none;
+    color: white;
+    font-size: calc(30px + 20 * (100vw / 1280));
+    font-family: 'Inter';
+    font-weight: bold;
+}
+
+.footer{
+    background-color: #171c22;
+    display: flex;
+    height: 40vh;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10%;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-bottom: 2%;
+
+}
+
+.content{
+    display: flex;
+    font-family: 'Inter';
+    justify-content: space-between;
+    width: 100%;
+    height: 40%;
+    
+
+}
+
+.firstblock{
+    display: flex;
+    justify-content: start;
+}
+.firstblock img{
+    width: 20%;
+    object-fit: scale-down;
+    margin-right: 10%; 
+
+}
+
+.firstinblock{
+    display: flex;
+    flex-direction: column;
+    color: #818181;
+    font-size: calc(13px + 7 * (100vw / 1280));
+    font-weight: bold;
+    justify-content: space-between;
+    
+}
+.firstinblock span{
+    color: white;
+    font-weight: bold;
+    font-size: calc(17px + 11 * (100vw / 1280));
+}
+.secondblock{
+    display: flex;
+    color: #818181;
+    flex-direction: column;
+    font-size: calc(13px + 7 * (100vw / 1280));
+    font-weight: bold;
+    justify-content: space-between;
+
+}
+
+.secondblock span{
+    color: white;
+    font-weight: bold;
+    font-size: calc(17px + 11 * (100vw / 1280));
+}
+
+.logos{
+    display: flex;
+    justify-content: space-between;
+}
+
+.logos img{
+    width: 40%;
+    object-fit: scale-down;
+}
+
+.reserved{
+    font-family: 'Inter';
+    color: #818181;
+    font-size: calc(7px + 11 * (100vw / 1280));
+}
+
+
+
+@media screen and (max-width:900px){
+    .mainarea{
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .calcimg{
+        justify-content: center;
+        height: 80%;
+        width: 20%;
+        
+    }
+    .calc1{
+        height: 100%;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        margin-top: 20%;
+
+    }
+    .calc2{
+        display: none;
+        object-fit: none;
+    }
+    .buttons{
+        display: none;
+    }
+    .logoarea{
+        align-items: center;
+    }
+    .logo{
+        width: 40%;
+    }
+
+    .design{
+        flex-direction: column;
+        
+    }
+    .design img{
+
+        padding: 0;
+    }
+    .design span{
+        padding: 0;
+        padding-top: 5%;
+    }
+
+    .selectmode{
+        flex-direction: column;
+        justify-content: space-around;
+        height: 23%;
+        width: 100%;
+
+
+    }
+    .selectmode span{
+        display: none;
+    }
+
+    .selectmode a{
+        height: auto;
+    }
+
+    .modes{
+        padding-top: 14%;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+    }
+    .modes img{
+        width: 95%;
+    }
+
+    .choosestyle{
+        justify-content: center;
+        /* flex-direction: column; */
+        flex-wrap: wrap;
+
+    }
+
+    /* .choosestyle img:first-child{
+        margin-right: auto;
+    } */
+    .choose{
+        display: none;
+        width: auto;
+        margin: 0 auto;     
+    }
+    .calcimg{
+        width: 50%;
+        height: 30vh;
+ 
+    }
+    .hidden{
+        display: flex;
+    }
+    .my-account-from{
+        width: 100%;
+    }
+    div.my-account-container{
+        width: 80%;
+    }
+    div.sign-in-container{
+        width: 80%;
+    }
+
+}
+
+@media screen and (min-width: 900px){
+    .burger{
+        display: none;
+    }
+
+}
+
+/* чтобы полоска прокрутки всегда была, а то без неё контент смещается */
+html {
+    overflow-y: scroll;
+    font-family: 'Inter';
+}
+
+
+
+
+
+/* для логина */
+.log-in-main, .my-account-main{
+    position: relative;
+    margin: 0;
+    display: flex;
+    padding-top: 5%;
+    width: 100%;
+    justify-content: center;
+    align-content:space-around;
+}
+.log-in-main {
+    background: #171c22;
+    background: linear-gradient(21deg, #dd03e4, #5611ec);
+}
+.my-account-main{
+    background: #171c22;
+    background: linear-gradient(0deg, rgba(23,28,34,1) 12%, rgba(12,14,17,1) 95%, rgba(10,12,14,1) 100%);
+}
+
+.sign-in-container, .my-account-container {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    background-color: white;
+	border-radius: calc(7px + 11 * (100vw / 1280));
+    width: 40%;
+	height: 80%;
+    text-align: center;
+    margin: 90px;
+}
+
+.sign-in-container h1,
+.my-account-container h1 {
+    padding: 5% 0;
+    margin: 0;
+    color: #212a35;
+    font-size: calc(10px + 25 * (100vw / 1280));
+}
+.my-account-container {
+    background-color: #2e3a48;
+}
+.my-account-container h1 {
+    color: #dcdcdc;
+}
+
+.sign-in-form, .my-account-form {
+    display: flex;
+    flex-direction: column;
+    color: #636e7c;
+}
+.my-account-form {
+    color: #dcdcdc;
+}
+
+.input {
+    font-size: calc(15px + 10 * (100vw / 1280));
+    width: 80%;
+    display: flex;      
+    flex-direction: column;
+    align-self: center;
+    text-align: left;  
+    margin: 5%;
+}
+
+.input input {
+    font-family: 'Inter';
+    font-size: calc(15px + 10 * (100vw / 1280));
+    border-radius: calc(7px + 11 * (100vw / 1280));
+    border-color: #171c22;
+    padding: 3%;
+    
+}
+
+.input label{
+    margin-bottom: 5%;
+    font-size: calc(7px + 15 * (100vw / 1280));
+}
+
+.lgn, .myacc{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+.log-in, .my-account {
+    font-family: 'Inter';
+    
+    font-size: calc(10px + 15 * (100vw / 1280));
+    font-weight: bold;
+    color: white;
+    background-color: #6344d4;
+    border: 0;
+    border-radius: calc(25px + 25 * (100vw / 1280));
+    width: 50%;
+    /* height: 100%; */
+    margin: 5% 0;
+    padding: 5%;
+}
+
+.log-in:hover {
+    background: #7054d8;
+}
+    
+.log-in:focus {
+    outline: none;
+    background-color: #4025a2;
+}
+
+.to-sign-up {
+    font-size: calc(6px + 15 * (100vw / 1280));
+    padding-bottom: 5%;
+}
+
+
+/* .my-account-main {
+    position: relative;
+    background: rgb(23,28,34);
+    background: linear-gradient(0deg, rgba(23,28,34,1) 12%, rgba(12,14,17,1) 95%, rgba(10,12,14,1) 100%);
+    height: 80vh;
+    margin: 0;
+    padding-top: 5%;
+    width: 100%;
+}
+
+.my-account-info {
+    font-weight: bold;
+    padding: 5vh;
+}
+
+.my-account-info h1 {
+    margin:0;
+    padding:0;
+    font-size: 50px;
+    color: #8b37ac;
+}
+
+.my-account-info p {
+    margin:0;
+    padding-top:10px;
+    font-size: 20px;
+    color: #d6d5d5;
+}
+
+.my-account-post-container {
+    display: flex;
+    justify-content: center;
+}
+
+.my-account-post {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding:10vh;
+    background-color: #2e3a48;
+    height: 60vh;
+    border-radius: 1vh;
+}
+
+.my-account-post input {
+    margin: 10px 0;
+    font-family: 'Inter';
+    font-size: 23px;
+} */
+
+textarea {
+    resize: none;
+    font-family: 'Inter';
+    font-size: calc(7px + 15 * (100vw / 1280));
+}
+
+.input-button {
+    font-family: 'Inter';
+    font-size: calc(7px + 15 * (100vw / 1280));
+    font-weight: bold;
+    color: white;
+    background-color: #6344d4;
+    border: 0;
+    border-radius: calc(25px + 25 * (100vw / 1280));
+    width: 50%;
+    height: 87px;
+    margin: 45px 0;
+    padding-bottom: 0;
+}
+
+.input-button:hover {
+    background: #7054d8;
+}
+    
+.input-button:focus {
+    outline: none;
+    background-color: #4025a2;
+}
+
+.do-log-out a {
+    color: #f61aa1
+}
